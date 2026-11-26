@@ -1,0 +1,192 @@
+{
+  "shells": [
+    {
+      "id": "V11",
+      "valve": "P11",
+      "liner": "L11"
+    },
+    {
+      "id": "V12",
+      "valve": "P12",
+      "liner": "L12"
+    },
+    {
+      "id": "V13",
+      "valve": "P13",
+      "liner": "L13"
+    }
+  ],
+  "labels": [
+    {
+      "issuer": "H",
+      "mark": "196",
+      "shell": "V11",
+      "valid_from": "2026-10-01",
+      "valid_to": "2026-11-20"
+    },
+    {
+      "issuer": "H",
+      "mark": "196",
+      "shell": "V12",
+      "valid_from": "2026-11-20",
+      "valid_to": "2026-12-01"
+    },
+    {
+      "issuer": "J",
+      "mark": "ED201",
+      "shell": "V11",
+      "valid_from": "2026-11-01",
+      "valid_to": "2027-01-01"
+    }
+  ],
+  "scans": [
+    {
+      "handoff": "D31",
+      "from": "wash-a",
+      "to": "plant-b",
+      "role": "from",
+      "shell": "V11",
+      "mark": "ED201",
+      "at": "2026-11-26T10:01:00+08:00"
+    },
+    {
+      "handoff": "D31",
+      "from": "wash-a",
+      "to": "plant-b",
+      "role": "to",
+      "shell": "V11",
+      "mark": "ED201",
+      "at": "2026-11-26T10:04:00+08:00"
+    },
+    {
+      "handoff": "D32",
+      "from": "wash-a",
+      "to": "plant-b",
+      "role": "from",
+      "shell": "V13",
+      "at": "2026-11-26T10:09:00+08:00"
+    },
+    {
+      "handoff": "D32",
+      "from": "wash-a",
+      "to": "plant-b",
+      "role": "to",
+      "shell": "V12",
+      "mark": "196",
+      "at": "2026-11-26T10:10:00+08:00",
+      "paper": "K081"
+    },
+    {
+      "handoff": "D32",
+      "from": "wash-a",
+      "to": "plant-b",
+      "role": "from",
+      "shell": "V12",
+      "replaces_shell": "V13",
+      "paper": "K081",
+      "at": "2026-11-26T10:09:00+08:00",
+      "reported_at": "2026-11-26T12:08:00+08:00"
+    },
+    {
+      "handoff": "D35",
+      "from": "wash-a",
+      "to": "plant-c",
+      "role": "from",
+      "shell": "V13",
+      "at": "2026-11-26T10:23:00+08:00"
+    },
+    {
+      "handoff": "D35",
+      "from": "wash-a",
+      "to": "plant-c",
+      "role": "to",
+      "shell": "V13",
+      "at": "2026-11-26T10:26:00+08:00"
+    }
+  ],
+  "wash": [
+    {
+      "issuer": "wash-a",
+      "ref": "W80",
+      "at": "2026-11-26T07:00:00+08:00",
+      "coverage": [
+        "V11",
+        "P11",
+        "L11",
+        "V12",
+        "P12",
+        "L12",
+        "V13",
+        "P13",
+        "L13"
+      ],
+      "procedure": "plant-food"
+    },
+    {
+      "issuer": "wash-a",
+      "ref": "W81",
+      "at": "2026-11-26T12:00:00+08:00",
+      "revokes": "W80",
+      "coverage": [
+        "L11",
+        "P12",
+        "P13"
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "shell": "V11",
+      "replaced": "L11",
+      "actual_part": "L21",
+      "at": "2026-11-26T09:11:00+08:00",
+      "new_evidence": "R7",
+      "fresh": true
+    }
+  ],
+  "uses": [
+    {
+      "shell": "V11",
+      "class": "peel",
+      "at": "2026-11-25T17:20:00+08:00"
+    },
+    {
+      "shell": "V12",
+      "class": "peel",
+      "at": "2026-11-25T18:00:00+08:00"
+    },
+    {
+      "shell": "V13",
+      "class": "peel",
+      "at": "2026-11-24T10:00:00+08:00"
+    },
+    {
+      "shell": "V11",
+      "class": "binder",
+      "at": "2026-11-26T10:40:00+08:00"
+    },
+    {
+      "shell": "V13",
+      "class": "binder",
+      "at": "2026-11-26T10:41:00+08:00"
+    }
+  ],
+  "purposes": [
+    {
+      "id": "binder",
+      "permitted_previous_classes": [
+        "peel",
+        "binder"
+      ],
+      "required_parts": [
+        "shell",
+        "valve",
+        "liner"
+      ],
+      "procedures": [
+        "plant-food"
+      ],
+      "allow_fresh_liner": true
+    }
+  ]
+}
